@@ -7,12 +7,14 @@ import { popularMovieType } from '@/types/movie';
 export interface Movie {
   loading: boolean;
   movies: popularMovieType[];
+  error: string;
 }
 const MoviesContext = createContext({} as Movie);
 
 export const MovieContextProvider = ({ children }: { children: ReactNode }) => {
   const [movies, setMovies] = useState<any>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('')
   useEffect(() => {
     setLoading(true);
     fetchMovies().then(() => console.log('movies fetched', movies));
@@ -26,7 +28,7 @@ export const MovieContextProvider = ({ children }: { children: ReactNode }) => {
       setLoading(false);
     } catch (error) {
       if (error instanceof AxiosError) {
-        console.log(error.response?.data);
+        setError(error.response?.data);
         setLoading(false);
       }
     }
@@ -36,6 +38,7 @@ export const MovieContextProvider = ({ children }: { children: ReactNode }) => {
       value={{
         loading: loading || false,
         movies: movies || [],
+        error
       }}
     >
       {children}
