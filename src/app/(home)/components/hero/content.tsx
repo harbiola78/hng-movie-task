@@ -12,7 +12,7 @@ const Content = ({ rated }: { rated: TopRated | null }) => {
         <Demo />
       ) : (
         <div className='container mx-auto w-full h-full'>
-          <div className='w-full h-full grid grid-cols-1 place-content-center max-w-sm gap-2'>
+          <div className='w-full h-full grid grid-cols-1 place-content-center max-w-[420px] gap-5'>
             <h2
               data-testid=' movie-title'
               className='sm:text-2xl md:text-4xl lg:text-5xl leading-tight font-semibold text-white'
@@ -38,7 +38,7 @@ const Content = ({ rated }: { rated: TopRated | null }) => {
                 </span>
               </div>
             </section>
-            <p className='text-white' data-testid='movie-overview'>
+            <p className='text-white text-base' data-testid='movie-overview'>
               {rated.overview}
             </p>
             {/* unimportant section */}

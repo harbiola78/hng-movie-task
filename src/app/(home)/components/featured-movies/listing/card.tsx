@@ -29,7 +29,7 @@ const Card = ({ movie }: { movie: popularMovieType }) => {
 
   return (
     <article
-      className='w-full md:w-[250px] md:h-[500px]'
+      className='w-full'
       data-testid='movie-card'
     >
       <picture className='w-full relative'>
