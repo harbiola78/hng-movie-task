@@ -16,7 +16,8 @@ export const MovieContextProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     setLoading(true);
     fetchMovies().then(() => console.log('movies fetched', movies));
-  }, []);
+  }, [movies]);
+  
   const fetchMovies = async () => {
     try {
       const data = (await MovieController.index()).movies;

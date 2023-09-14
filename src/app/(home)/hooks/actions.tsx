@@ -14,13 +14,6 @@ export interface Genre {
     name: string;
   }[];
 }
-const fetchTopRated = async () => {
-  const params =
-    'account/10632264/rated/movies?language=en-US&page=1&sort_by=created_at.asc';
-  const p = 'movie/top_rated?language=en-US&page=1';
-  const { data, status } = await Axios.get(`/${p}`);
-  console.log(data);
-};
 
 type Rated = {
   results: TopRated[]
@@ -46,4 +39,6 @@ class MovieController {
   }
 }
 
-export default new MovieController();
+const Controller = new MovieController()
+
+export default Controller;

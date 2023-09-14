@@ -3,7 +3,7 @@ import Axios from '@/libs/axios';
 import { creditsType, movieType } from '@/types/movie';
 import { AxiosError } from 'axios';
 import { useParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 const useMovie = () => {
   const pathName = useParams();
@@ -15,10 +15,10 @@ const useMovie = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetchUserDetails().then(() => {});
+    fetchMovies().then(() => {});
   }, []);
 
-  async function fetchUserDetails() {
+  async function fetchMovies() {
     try {
       const fetchedMovie = await fetchMovie();
       setMovie(fetchedMovie.movie);
@@ -27,12 +27,13 @@ const useMovie = () => {
       if (error instanceof AxiosError) {
         setError(error.response?.data || 'Server downtime, try again later!!');
       }
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   }
+
   const getUTCDate = (date: string) => {
     const localReleaseDate = new Date(date);
-    // Converting it to UTC by subtracting the local time zone offset
     const utcReleaseDate = new Date(
       localReleaseDate.getTime() - localReleaseDate.getTimezoneOffset() * 60000
     );

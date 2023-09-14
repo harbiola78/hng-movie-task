@@ -9,7 +9,7 @@ const credits = ({ credits }: { credits: creditsType }) => {
         credits.crew
           .slice(0, 6)
           .toSorted()
-          .map((crew) => <Crew crew={crew} />)}
+          .map((crew) => <Crew key={crew.id} crew={crew} />)}
     </div>
   );
 };

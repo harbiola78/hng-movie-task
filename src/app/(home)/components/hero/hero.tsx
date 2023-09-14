@@ -17,7 +17,7 @@ const Hero = () => {
  }
   useEffect(() => {
     fetchRatedMovies(index).then(() => console.log('fetched'))
-  }, [])
+  }, [index])
   const posterBaseUrl = 'https://image.tmdb.org/t/p/w1280';
   return (
     <div className='section relative h-screen max-h-screen '>

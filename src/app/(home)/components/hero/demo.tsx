@@ -21,7 +21,7 @@ const Demo = () => {
         </section>
         <p className='text-white'>
           John Wick is on the run after killing a member of the international
-          assassins' guild, and with a $14 million price tag on his head, he is
+          assassins guild, and with a $14 million price tag on his head, he is
           the target of hit men and women everywhere.
         </p>
         <div className="flex w-full">
