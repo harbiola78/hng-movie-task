@@ -31,7 +31,7 @@ const SearchDropdown = ({ result, errorMessage, loading }: DropdownProps) => {
 
 const Loading = () => (
   <p className='flex items-center text-sm gap-1 py-3 px-5 rounded-md bg-white/70  w-full'>
-    loading...
+    searching...
   </p>
 );
 
