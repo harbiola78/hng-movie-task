@@ -8,7 +8,6 @@ import { Fragment } from 'react';
 import Loader from '@/ui/shared/loader';
 import ErrorMessage from '@/ui/shared/error';
 import Image from 'next/image';
-import { movieType } from '@/types/movie';
 
 const Content = () => {
   const { credits, error, loading, movie, getUTCDate } = useMovie();
