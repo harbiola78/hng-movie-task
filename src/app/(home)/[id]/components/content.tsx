@@ -12,7 +12,7 @@ import { movieType } from '@/types/movie';
 
 const Content = () => {
   const { credits, error, loading, movie, getUTCDate } = useMovie();
-  const rating = (val: number) => `${val * 10}%`;
+  const rating = (val: number) => `${Math.round(val * 10)}%`;
 
   const separator = (index: number, movie: movieType) =>
     index === movie.genres.length - 1 ? '' : ', ';
