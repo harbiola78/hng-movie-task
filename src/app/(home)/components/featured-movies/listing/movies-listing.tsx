@@ -8,7 +8,7 @@ import Link from 'next/link';
 const MoviesListing = () => {
   const { movies, loading } = useMovies();
   return (
-    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-20'>
+    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-x-5 gap-y-20'>
       <Fragment>
         {loading ? (
           <MovieLoader count={4} />

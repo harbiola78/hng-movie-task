@@ -12,7 +12,7 @@ const Footer = () => {
           <FaTwitter size={24} />
           <BsYoutube size={24} />
         </div>
-        <div className='flex gap-10'>
+        <div className='flex gap-2 text-center md:text-start md:gap-10 flex-col md:flex-row'>
           <Link href={'#terms'}>Conditions of Use</Link>
           <Link href={'#privacy'}>Privacy & Policy</Link>
           <Link href={'#press-room'}>Press Room</Link>

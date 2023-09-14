@@ -15,6 +15,7 @@ const Banner = ({ poster_path }: { poster_path: string }) => {
         src={poster_path ? posterBaseUrl + poster_path : '/image.svg'}
         alt='movie image'
         className='w-full max-h-[360px] object-cover object-center rounded-lg'
+        data-testid='movie-poster'
       />
       <div className='absolute top-0 w-full h-full z-10 flex items-center justify-center'>
         <button className='outline-none rounded-full h-12 w-12 bg-white/50 flex items-center justify-center'>

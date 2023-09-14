@@ -11,7 +11,7 @@ const Card = ({ movie }: { movie: popularMovieType }) => {
   const posterBaseUrl = 'https://image.tmdb.org/t/p/w1280/';
   const [liked, setLiked] = useState(false);
   const rating = (val: number) => `${val * 10}%`;
-  const popularity = (val: number) => (Math.round(val / 1000) * 10).toFixed(1);
+  const popularity = (val: number) => (Math.round(val / 100) * 10).toFixed(1);
 
   const fetchGeneres = async () => {
     const data = (await MoviesController.index()).genres;
@@ -28,7 +28,10 @@ const Card = ({ movie }: { movie: popularMovieType }) => {
     genreId.map((id) => genres.filter((i) => i.id == id)[0]?.name).join(', ');
 
   return (
-    <article className='w-[250px] h-[500px]' data-testid='movie-card'>
+    <article
+      className='w-full md:w-[250px] md:h-[500px]'
+      data-testid='movie-card'
+    >
       <picture className='w-full relative'>
         <Image
           src={`${posterBaseUrl}${movie.poster_path}`}
@@ -67,7 +70,10 @@ const Card = ({ movie }: { movie: popularMovieType }) => {
         <div className='flex justify-between items-center'>
           <div className='flex gap-2'>
             <Image src='/imdb.svg' alt='imdb logo' width={35} height={17} />
-            <span className='text-sm'>{popularity(movie.vote_count)}/100</span>
+            <span className='text-sm'>
+              {Math.round((movie.vote_average / 10) * (movie.vote_count / 100))}
+              /100
+            </span>
           </div>
           <div className='flex gap-2'>
             <Image src='/fruit.svg' alt='imdb logo' width={16} height={17} />

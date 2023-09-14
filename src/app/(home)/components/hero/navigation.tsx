@@ -5,7 +5,7 @@ import Search from '../search/search';
 
 const Navigation = () => {
   return (
-    <nav className='container mx-auto flex py-5 justify-between items-center'>
+    <nav className='container mx-auto flex flex-col md:flex-row sm:gap-5 md:gap-0 py-5 justify-between items-center'>
       <div className='flex gap-5 items-center'>
         <Image src={'/tv.svg'} alt='logo' width={50} height={50} />
         <h3 className='text-2xl font-semibold text-white'>MovieBox</h3>

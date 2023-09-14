@@ -14,13 +14,13 @@ const DetailPage = () => {
     setCurrent(current);
   }
   return (
-    <main className='w-full bg-white sm:min-h-screen max-w-[1440px] mx-auto'>
-      <div className='flex w-full'>
+    <main className='w-full bg-white h-screen overflow-hidden max-w-[1440px] mx-auto'>
+      <div className='flex w-full h-full'>
         <SideBar current={current} action={handleCurrent} />
 
         {current == 1 ? <Content /> : null}
         {current > 1 ? (
-          <div className='flex w-full items-center justify-center text-4xl font-semibold text-pink-500'>
+          <div className='px-5 md:px-0 flex w-full items-center justify-center text-4xl font-semibold text-pink-500'>
             Feature is coming soon!
           </div>
         ) : null}

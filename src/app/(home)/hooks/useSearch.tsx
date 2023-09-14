@@ -12,18 +12,25 @@ const useSearch = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
+  function LoadAndReset() {
+    setIsLoading(true);
+    setErrorMessage('');
+    setResult([]);
+    setSearchQuery('');
+    setShowResult(false);
+  }
   async function handleSearch(e: ChangeEvent<HTMLInputElement>) {
-    setIsLoading(true)
+    LoadAndReset();
     const search = e.target.value;
     setSearchQuery(search);
     if (!search) {
       return;
     }
 
-    console.log(search);
     if (search.length <= 2) {
-        setIsLoading(false)
-        setErrorMessage('search value must be at least (3) characters')
+      search.length === 2
+        ? setErrorMessage('search value must be at least (3) characters')
+        : null;
       return;
     }
 
@@ -32,15 +39,25 @@ const useSearch = () => {
     try {
       const { data } = await Axios.get<Movie>(`/search/movie?query=${search}`);
       const output = data.results.slice(0, 6);
-      setResult(output);
+      output.length > 0 ? setResult(output) : setErrorMessage('No movie found');
     } catch (error) {
-      // Handle the error in an appropriate way
-      if(error instanceof AxiosError) {
-        setErrorMessage(error.response?.data || 'An error occured, try again later!!')
+      if (error instanceof AxiosError) {
+        setErrorMessage(
+          error.response?.data || 'An error occured, try again later!!'
+        );
       }
+    } finally {
+      setIsLoading(false);
     }
   }
-  return {isLoading,  result, errorMessage, showResult, searchQuery, handleSearch };
+  return {
+    isLoading,
+    result,
+    errorMessage,
+    showResult,
+    searchQuery,
+    handleSearch,
+  };
 };
 
 export default useSearch;
