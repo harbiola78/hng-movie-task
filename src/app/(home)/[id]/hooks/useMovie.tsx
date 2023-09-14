@@ -3,7 +3,7 @@ import Axios from '@/libs/axios';
 import { creditsType, movieType } from '@/types/movie';
 import { AxiosError } from 'axios';
 import { useParams } from 'next/navigation';
-import { useCallback, useEffect, useState } from 'react';
+import {  useEffect, useState } from 'react';
 
 const useMovie = () => {
   const pathName = useParams();
