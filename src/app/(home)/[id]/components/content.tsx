@@ -44,7 +44,6 @@ const Content = () => {
                       className='text-sm rounded-full py-1 px-5 border-2 text-pink-500'
                     >
                       <span>{genre.name}</span>
-                      {separator(movie.id, movie)}
                     </span>
                   ))}
               </div>
