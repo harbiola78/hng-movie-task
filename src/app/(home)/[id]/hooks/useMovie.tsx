@@ -3,7 +3,7 @@ import Axios from '@/libs/axios';
 import { creditsType, movieType } from '@/types/movie';
 import { AxiosError } from 'axios';
 import { useParams } from 'next/navigation';
-import {  useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const useMovie = () => {
   const pathName = useParams();
@@ -25,7 +25,11 @@ const useMovie = () => {
       setCredits(fetchedMovie.credits);
     } catch (error) {
       if (error instanceof AxiosError) {
-        setError(error.response?.data || 'Server downtime, try again later!!');
+        setError(
+          error.response?.data.status_message ||
+            error.response?.data ||
+            'Server downtime, try again later!!'
+        );
       }
     } finally {
       setLoading(false);

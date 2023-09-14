@@ -13,7 +13,7 @@ import { movieType } from '@/types/movie';
 const Content = () => {
   const { credits, error, loading, movie, getUTCDate } = useMovie();
   const rating = (val: number) => `${val * 10}%`;
-  
+
   const separator = (index: number, movie: movieType) =>
     index === movie.genres.length - 1 ? '' : ', ';
   return (
@@ -27,7 +27,7 @@ const Content = () => {
           <section className='flex flex-col justify-between md:flex-row my-5 md:gap-5 md:items-center flex-wrap'>
             <h3 className='text-lg font-semibold'>
               <span data-testid='movie-title'>{movie.original_title}</span>:{' '}
-              <span>{movie.tagline}</span>{' '}
+              <span>{movie?.tagline}</span>{' '}
             </h3>
             <div data-testid='movie-release-date'>
               {getUTCDate(movie.release_date).toUTCString()}
@@ -38,9 +38,9 @@ const Content = () => {
             <div>
               <div className='my-2 flex gap-2'>
                 {movie.genres &&
-                  movie.genres.slice(0,2).map((genre, i) => (
+                  movie.genres.slice(0, 2).map((genre, i) => (
                     <span
-                      key={`${Date.now()}${i}`}
+                      key={`${new Date(Date.now()).getUTCDate()}${i}`}
                       className='text-sm rounded-full py-1 px-5 border-2 text-pink-500'
                     >
                       <span>{genre.name}</span>

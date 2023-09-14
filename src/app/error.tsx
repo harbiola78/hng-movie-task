@@ -18,7 +18,7 @@ const NotFoundPage = ({
         alt='error'
         className='rounded-full'
       />
-      <h1>{error.message || 'Something went wrong'}</h1>
+      <h1 className='px-5 px:mx-14'>{error?.message || 'Something went wrong'}</h1>
       <div className='flex items-center justify-center gap-4'>
         <button
           className='border-2 border-pink-500 px-5 py-3 my-5 rounded-lg outline-none'

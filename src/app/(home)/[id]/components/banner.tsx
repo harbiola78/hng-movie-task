@@ -18,7 +18,7 @@ const Banner = ({ poster_path }: { poster_path: string }) => {
         data-testid='movie-poster'
       />
       <div className='absolute top-0 w-full h-full z-10 flex items-center justify-center'>
-        <button className='outline-none rounded-full h-12 w-12 bg-white/50 flex items-center justify-center'>
+        <button className='outline-none rounded-full h-14 w-14 bg-white/50 flex items-center justify-center'>
           <BsFillPlayCircleFill
             size={24}
             className={'text-white/90'}

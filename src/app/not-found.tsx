@@ -17,7 +17,7 @@ export default function NotFound({ error, reset }: NotFoundProps) {
         alt='error'
         className='rounded-full'
       />
-      <h1>{error?.message || 'Content not found'}</h1>
+      <h1>{error?.message || 'Page not found'}</h1>
       <div className='flex items-center justify-center gap-4'>
         <button
           className='border-2 border-pink-500 px-5 py-3 my-5 rounded-lg outline-none'

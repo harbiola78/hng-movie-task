@@ -18,7 +18,7 @@ const DetailPage = () => {
     setCurrent(current);
   }
   return (
-    <main className='w-full bg-white h-screen overflow-hidden max-w-[1440px] mx-auto'>
+    <main className='dark:text-black w-full bg-white h-screen overflow-hidden max-w-[1440px] mx-auto'>
       <div className='flex w-full h-full'>
         <SideBar current={current} action={handleCurrent} />
 
