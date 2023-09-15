@@ -1,12 +1,10 @@
 import axios from 'axios';
 
 const Axios = axios.create({
-  baseURL: process.env.API_URL || 'https://api.themoviedb.org/3/',
+  baseURL: process.env.API_URL ,
 });
 
-const token = process.env.ACCESS_TOKEN || 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyOGI0ZGZmNzUxNGVmNGQ0OGNjMDMwMzA5NDBlYzI0NiIsInN1YiI6IjYwY2MzYWNjYWFlYzcxMDAyOTZiMzhhYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.26Lkuzd2upChHV0yjiS5z1O7wEvQLKd27zkJQbcac1w'
-
-// console.log(token);
+const token = process.env.ACCESS_TOKEN
 
 Axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 
