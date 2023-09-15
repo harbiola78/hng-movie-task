@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { BsFillHeartFill } from 'react-icons/bs';
 import MoviesController from '@/app/(home)/hooks/actions';
+import Link from 'next/link';
 
 const Card = ({ movie }: { movie: popularMovieType }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -28,11 +29,8 @@ const Card = ({ movie }: { movie: popularMovieType }) => {
     genreId.map((id) => genres.filter((i) => i.id == id)[0]?.name).join(', ');
 
   return (
-    <article
-      className='w-full'
-      data-testid='movie-card'
-    >
-      <picture className='w-full relative'>
+    <article className='w-full relative' data-testid='movie-card'>
+      <Link href={`/${movie.id}`} className='w-full'>
         <Image
           src={`${posterBaseUrl}${movie.poster_path}`}
           alt=''
@@ -41,20 +39,20 @@ const Card = ({ movie }: { movie: popularMovieType }) => {
           className='w-full object-cover object-center'
           data-testid='movie-poster'
         />
-        <div className='absolute top-0 z-30 w-full'>
-          <div className='flex justify-between items-center my-4 px-2'>
-            <span className='rounded-2xl h-8 px-5 bg-white/50 font-medium flex items-center justify-center'>
-              Popular
-            </span>
-            <button className='outline-none rounded-full h-8 w-8 bg-white/50 flex items-center justify-center'>
-              <BsFillHeartFill
-                className={liked ? 'text-pink-500' : 'text-white/90'}
-                onClick={() => setLiked((liked) => !liked)}
-              />
-            </button>
-          </div>
+      </Link>
+      <div className='absolute top-0 z-10  0 w-full'>
+        <div className='flex justify-between items-center my-4 px-2'>
+          <span className='rounded-2xl h-8 px-5 bg-white/50 font-medium flex items-center justify-center'>
+            Popular
+          </span>
+          <button className='outline-none rounded-full h-8 w-8 bg-white/50 flex items-center justify-center'>
+            <BsFillHeartFill
+              className={liked ? 'text-pink-500' : 'text-white/90'}
+              onClick={() => setLiked((liked) => !liked)}
+            />
+          </button>
         </div>
-      </picture>
+      </div>
       <section>
         <p className='text-sm text-gray-500 my-2 font-semibold space-x-4'>
           <span>Realease Date</span>

@@ -26,10 +26,10 @@ const Content = () => {
               <span data-testid='movie-title'>{movie.original_title}</span>:{' '}
               <span>{movie?.tagline}</span>{' '}
             </h3>
-            <div data-testid='movie-release-date'>
+            <div data-testid='movie-release-date' className='text-sm'>
               {getUTCDate(movie.release_date).toUTCString()}
             </div>
-            <div>
+            <div className='text-sm'>
               Mins: <span data-test-id='movie-runtime'>{movie.runtime}</span>
             </div>
             <div>

@@ -13,11 +13,9 @@ const MoviesListing = () => {
         {loading ? (
           <MovieLoader count={4} />
         ) : (
-          movies.slice(0, 10).map((movie) => (
-            <Link key={movie.id} href={`/${movie.id}`}>
-              <Card key={movie.id} movie={movie} />
-            </Link>
-          ))
+          movies
+            .slice(0, 10)
+            .map((movie) => <Card key={movie.id} movie={movie} />)
         )}
       </Fragment>
     </div>

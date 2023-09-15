@@ -12,7 +12,9 @@ const Banner = ({
   const randomNumber = Math.floor(Math.random() * 3) + 1;
   return (
     <div className='mb-5 w-full relative overflow-hidden box-border'>
-      {movie.videos && movie.videos.results?.length > 0 ? (
+      {movie.videos &&
+      movie.videos.results?.length > 0 &&
+      movie.videos.results[randomNumber]?.key ? (
         <Video videoKey={movie.videos.results[randomNumber].key} />
       ) : (
         <Image
