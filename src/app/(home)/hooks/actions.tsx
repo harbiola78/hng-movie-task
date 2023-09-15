@@ -1,5 +1,5 @@
-import Axios from '@/libs/axios';
-import { TopRated, popularMovieType } from '@/types/movie';
+import Axios from '../../../../libs/axios';
+import { TopRated, popularMovieType } from '../../../../types/movie';
 
 export interface Movie {
   results: popularMovieType[];

@@ -34,3 +34,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+/libs/
+/ui/
+/utils/
+/src/app/error.tsx
+/srd/app/not-found.tsx
+/types/

@@ -1,5 +1,5 @@
-import { Genre, popularMovieType } from '@/types/movie';
-import { formatDate } from '@/utils/formatter';
+import { Genre, popularMovieType } from '../../../../../../types/movie';
+import { formatDate } from '../../../../../../utils/formatter';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { BsFillHeartFill } from 'react-icons/bs';

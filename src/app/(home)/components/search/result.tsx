@@ -1,7 +1,7 @@
 import React from 'react';
-import { popularMovieType } from '@/types/movie';
+import { popularMovieType } from '../../../../../types/movie';
 import Image from 'next/image';
-import { formatDate } from '@/utils/formatter';
+import { formatDate } from '../../../../../utils/formatter';
 
 interface Props {
   result: popularMovieType;

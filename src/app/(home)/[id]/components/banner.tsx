@@ -1,4 +1,4 @@
-import { movieType } from '@/types/movie';
+import { movieType } from '../../../../../types/movie';
 import Image from 'next/image';
 
 const Banner = ({

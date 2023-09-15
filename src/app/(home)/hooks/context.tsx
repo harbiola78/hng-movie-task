@@ -2,7 +2,7 @@
 import { AxiosError } from 'axios';
 import React, { ReactNode, createContext, useEffect, useState } from 'react';
 import MovieController from './actions';
-import { popularMovieType } from '@/types/movie';
+import { popularMovieType } from '../../../../types/movie';
 
 export interface Movie {
   loading: boolean;

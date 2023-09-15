@@ -1,8 +1,8 @@
 'use client';
-import Axios from '@/libs/axios';
+import Axios from '../../../../libs/axios';
 import { ChangeEvent, useState } from 'react';
 import { Movie } from './actions';
-import { popularMovieType } from '@/types/movie';
+import { popularMovieType } from '../../../../types/movie';
 import { AxiosError } from 'axios';
 
 const useSearch = () => {

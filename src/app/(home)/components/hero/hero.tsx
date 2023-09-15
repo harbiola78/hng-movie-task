@@ -2,9 +2,9 @@
 import Image from 'next/image';
 import Navigation from './navigation';
 import Content from './content';
-import Axios from '@/libs/axios';
+import Axios from '../../../../../libs/axios';
 import { useEffect, useState } from 'react';
-import { TopRated } from '@/types/movie';
+import { TopRated } from '../../../../../types/movie';
 import MovieController from '@/app/(home)/hooks/actions';
 
 const Hero = () => {

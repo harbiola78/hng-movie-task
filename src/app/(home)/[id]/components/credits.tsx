@@ -1,4 +1,4 @@
-import { creditsType } from '@/types/movie';
+import { creditsType } from '../../../../../types/movie';
 import Crew from './crew';
 
 const Credits = ({ credits }: { credits: creditsType }) => {

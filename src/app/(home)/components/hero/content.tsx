@@ -1,4 +1,4 @@
-import { TopRated } from '@/types/movie';
+import { TopRated } from '../../../../../types/movie';
 import Image from 'next/image';
 import { Fragment } from 'react';
 import { FaPlayCircle } from 'react-icons/fa';

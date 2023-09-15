@@ -1,6 +1,6 @@
 'use client';
-import Axios from '@/libs/axios';
-import { creditsType, movieType } from '@/types/movie';
+import Axios from '../../../../../libs/axios';
+import { creditsType, movieType } from '../../../../../types/movie';
 import { AxiosError } from 'axios';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';

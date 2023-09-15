@@ -1,4 +1,4 @@
-import { crewType } from '@/types/movie';
+import { crewType } from '../../../../../types/movie';
 
 const Crew = ({ crew }: { crew: crewType }) => {
   return (

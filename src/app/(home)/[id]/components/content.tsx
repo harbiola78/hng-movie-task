@@ -5,8 +5,8 @@ import DetailsSection from './detials-section';
 import Banner from './banner';
 import useMovie from '../hooks/useMovie';
 import { Fragment } from 'react';
-import Loader from '@/ui/shared/loader';
-import ErrorMessage from '@/ui/shared/error';
+import Loader from '../../../../../ui/shared/loader';
+import ErrorMessage from '../../../../../ui/shared/error';
 import Image from 'next/image';
 
 const Content = () => {
