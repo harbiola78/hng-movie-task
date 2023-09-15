@@ -10,6 +10,7 @@ const Banner = ({
 }) => {
   const posterBaseUrl = 'https://image.tmdb.org/t/p/w1280';
   const randomNumber = Math.floor(Math.random() * 3) + 1;
+  const placeHolderImage  ='https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
   return (
     <div className='mb-5 w-full relative overflow-hidden box-border'>
       {movie.videos &&
@@ -20,9 +21,10 @@ const Banner = ({
         <Image
           width={1080}
           height={550}
-          src={poster_path ? posterBaseUrl + poster_path : '/image.svg'}
+          src={poster_path ? posterBaseUrl + poster_path : placeHolderImage}
           alt='movie image'
           className='w-full max-h-[400px] object-cover object-center rounded-lg'
+          priority={true}
           data-testid='movie-poster'
         />
       )}

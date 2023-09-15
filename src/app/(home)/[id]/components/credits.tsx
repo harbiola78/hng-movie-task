@@ -1,7 +1,7 @@
 import { creditsType } from '@/types/movie';
 import Crew from './crew';
 
-const credits = ({ credits }: { credits: creditsType }) => {
+const Credits = ({ credits }: { credits: creditsType }) => {
   return (
     <div className='flex gap-2 flex-col mt-5'>
       {Array.isArray(credits.crew) &&
@@ -9,9 +9,9 @@ const credits = ({ credits }: { credits: creditsType }) => {
         credits.crew
           .slice(0, 6)
           .toSorted()
-          .map((crew) => <Crew key={crew.id} crew={crew} />)}
+          .map((crew) => <Crew key={crew.id+'_'+crew.credit_id} crew={crew} />)}
     </div>
   );
 };
 
-export default credits;
+export default Credits;
