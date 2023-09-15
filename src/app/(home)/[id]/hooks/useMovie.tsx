@@ -45,7 +45,8 @@ const useMovie = () => {
   };
 
   const fetchMovie = async () => {
-    const { data: movie } = await Axios.get<movieType>(`/movie/${id}`);
+    const metaData = '?append_to_response=videos,images,credits'
+    const { data: movie } = await Axios.get<movieType>(`/movie/${id}${metaData}`);
     const { data: credits } = await Axios.get<creditsType>(
       `/movie/${id}/credits`
     );
@@ -53,10 +54,10 @@ const useMovie = () => {
       movie,
       credits,
     };
-    console.log({ data }, 'status');
+    console.log(data.movie.videos.results);
     return data;
   };
-  return { movie, loading, credits, error, getUTCDate };
+  return { movie, loading, credits, error, getUTCDate};
 };
 
 export default useMovie;

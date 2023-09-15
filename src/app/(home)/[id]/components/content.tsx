@@ -20,7 +20,7 @@ const Content = () => {
       ) : (
         <article className='px-3 md:px-10 py-7 w-full xl:w-3/4 h-screen overflow-auto'>
           <ErrorMessage error={error} />
-          <Banner poster_path={movie.poster_path} />
+          <Banner poster_path={movie.poster_path} movie={movie} />
           <section className='flex flex-col justify-between md:flex-row my-5 md:gap-5 md:items-center flex-wrap'>
             <h3 className='text-lg font-semibold'>
               <span data-testid='movie-title'>{movie.original_title}</span>:{' '}

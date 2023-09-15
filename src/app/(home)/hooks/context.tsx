@@ -14,12 +14,12 @@ const MoviesContext = createContext({} as Movie);
 export const MovieContextProvider = ({ children }: { children: ReactNode }) => {
   const [movies, setMovies] = useState<any>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('')
+  const [error, setError] = useState('');
   useEffect(() => {
     setLoading(true);
-    fetchMovies().then(() => console.log('movies fetched', movies));
+    fetchMovies().then(() => console.log('movies fetched'));
   }, []);
-  
+
   const fetchMovies = async () => {
     try {
       const data = (await MovieController.index()).movies;
@@ -38,7 +38,7 @@ export const MovieContextProvider = ({ children }: { children: ReactNode }) => {
       value={{
         loading: loading || false,
         movies: movies || [],
-        error
+        error,
       }}
     >
       {children}

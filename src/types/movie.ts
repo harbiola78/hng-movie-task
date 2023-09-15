@@ -17,6 +17,21 @@ export type popularMovieType = {
   rating?: number;
 };
 
+export type MovieVideo = {
+  results: {
+    iso_639_1: string;
+    iso_3166_1: string;
+    name: string;
+    key: string;
+    site: string;
+    size: number;
+    type: string;
+    official: true;
+    published_at: string;
+    id: string;
+  }[]
+};
+
 type genres = {
   id: number;
   name: string;
@@ -79,6 +94,7 @@ export type movieType = {
   overview: string;
   popularity: number;
   poster_path: string;
+  videos: MovieVideo;
   production_companies: prodCompany[];
   production_countries: prodCountry[];
   release_date: string;
@@ -88,7 +104,6 @@ export type movieType = {
   status: string;
   tagline: string;
   title: string;
-  video: boolean;
   vote_average: number;
   vote_count: number;
 };
