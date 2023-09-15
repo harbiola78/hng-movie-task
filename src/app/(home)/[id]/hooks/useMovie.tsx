@@ -54,7 +54,6 @@ const useMovie = () => {
       movie,
       credits,
     };
-    console.log(data.movie.videos.results);
     return data;
   };
   return { movie, loading, credits, error, getUTCDate};

@@ -13,7 +13,6 @@ const Hero = () => {
   async function fetchRatedMovies(index: number) {
     const data = (await MovieController.index()).rated;
     setRated(data[index]);
-    console.log(data[index]);
   }
   useEffect(() => {
     fetchRatedMovies(index).then(() => console.log('fetched'));
